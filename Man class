@@ -1,0 +1,51 @@
+import org.eclipse.swt.graphics.GC;
+import org.eclipse.swt.widgets.Canvas;
+
+public class Man {
+	int missingCount = 0;
+	
+	Canvas canvas; 
+	GC gc;
+	
+	public void reset() {
+		missingCount = 0;
+		
+		gc.fillRectangle(0, 0, 186, 261);
+		
+		gc.drawLine(40, 5, 120, 5);
+		
+		gc.drawLine(120, 5, 120, 15);
+		
+		gc.drawLine(40, 5, 40, 240);
+		
+		gc.drawLine(5, 240, 160, 240);
+	}
+	
+	public void addMissing() {
+		missingCount++;
+		
+		if(missingCount == 1) {
+			gc.drawOval(110, 15, 30, 40);
+		}
+		
+		if(missingCount == 2) {
+			gc.drawLine(125, 55, 125, 100);
+		}
+		
+		if(missingCount == 3) {
+			gc.drawLine(125, 100, 110, 120);
+		}
+		
+		if(missingCount == 4) {
+			gc.drawLine(125, 100, 140, 120);
+		}
+		
+		if(missingCount == 5) {
+			gc.drawLine(125, 65, 110, 70);
+		}
+		
+		if(missingCount == 6) {
+			gc.drawLine(125, 65, 140, 70);
+		}
+	}
+}
