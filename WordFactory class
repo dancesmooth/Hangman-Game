@@ -1,18 +1,20 @@
 import java.util.Random;
 
 public class WordFactory {
-	String[] Array = {
+	String[] WordList = {
 			"Dog", 
 			"Cat", 
 			"Bear", 
 			"Cow",
 			"Fish",
-			"Horse"
+			"Horse",
+			"Computer",
+			"Science"
 			};
 	
 	public String makeWord() {
 		Random rand = new Random();
-		int n = rand.nextInt(Array.length);
-		return Array[n];
+		int n = rand.nextInt(WordList.length);
+		return WordList[n];
 	}
 }
