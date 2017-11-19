@@ -1,4 +1,4 @@
-ort org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Label;
 
 public class HangmanDisplay {
 	private String word;
@@ -67,12 +67,23 @@ public class HangmanDisplay {
 		
 	}
 	
-	public int getnumberofguessedletter(){
+	public boolean IsFailed(){
 	
-	return guessedletters.length();
+	return guessedletters.length() >= 6;
 		
 		
 		
 		
 	}
+	
+	public boolean IsWon(){
+		
+		return missingletter.lastIndexOf("_") == -1;
+			
+			
+			
+			
+		
+	}
 }
+
