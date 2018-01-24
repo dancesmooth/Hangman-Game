@@ -41,3 +41,48 @@ public class HangmanDisplay {
 	}
 	
 	
+public boolean EnterLetter(char Letter){
+		boolean b = false;
+		for(int i = 0; i < word.length(); i++){
+			
+			char a = word.charAt(i);
+			if (Character.toLowerCase(a) == Character.toLowerCase(Letter)){
+				
+				b = true;
+				
+				missingletter.setCharAt(i, Letter);
+				
+			}
+		}
+		if (b == false){
+			
+			guessedletters.append(Letter);
+		}
+		displayWithSpace(missinglabel, missingletter);
+		
+		displayWithSpace(guessedlabel, guessedletters);
+		
+		return b;
+		
+		
+	}
+	
+	public boolean IsFailed(){
+	
+	return guessedletters.length() >= 6;
+		
+		
+		
+		
+	}
+	
+	public boolean IsWon(){
+		
+		return missingletter.lastIndexOf("_") == -1;
+			
+			
+			
+			
+		
+	}
+}
