@@ -1,0 +1,43 @@
+import org.eclipse.swt.widgets.Label;
+
+public class HangmanDisplay {
+	private String word;
+	StringBuilder missingletter;
+	StringBuilder guessedletters;
+	
+	Label missinglabel;
+	Label guessedlabel;
+	
+	public void reset(String ab){
+		
+		word = ab;
+
+		guessedletters = new StringBuilder();
+		
+		
+		missingletter = new StringBuilder();
+		for(int i = 0; i < word.length(); i++){
+			
+			
+			missingletter.append('_');
+			
+		}
+		
+		displayWithSpace(missinglabel, missingletter);
+		
+		displayWithSpace(guessedlabel, guessedletters);
+		
+
+	}
+	
+	
+	private void displayWithSpace(Label lb, StringBuilder sb) {
+		StringBuilder s = new StringBuilder();
+		for (int i = 0; i < sb.length(); i++) {
+			s.append(' ');
+			s.append(sb.charAt(i));
+		}
+		lb.setText(s.toString());
+	}
+	
+	
