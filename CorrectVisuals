@@ -41,7 +41,7 @@ public class HangmanDisplay {
 	}
 	
 	
-public boolean EnterLetter(char Letter){
+	public boolean EnterLetter(char Letter){
 		boolean b = false;
 		for(int i = 0; i < word.length(); i++){
 			
